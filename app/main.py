@@ -43,3 +43,11 @@ for route in app.routes:
     print(f"Route loaded: {route.path}")
 
 logger.info("Magicpin AI Engine started.")
+
+@app.get("/")
+def root():
+    return {
+        "message": "Magicpin AI Engine is running 🚀",
+        "docs": "/docs",
+        "health": "/v1/health"
+    }
